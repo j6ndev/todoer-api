@@ -19,6 +19,7 @@
   "dependencies": {
     "@todoer/api": "file:todoer-api",
     "@todoer/db": "file:todoer-db",
+    "@todoer/config": "file:todoer-config",
     "body-parser": "^1.18.3",
     "express": "^4.16.3"
   },

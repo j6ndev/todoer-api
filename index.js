@@ -1,9 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const { task } = require('@todoer/api');
+const config = require('@todoer/config');
 
 const app = express();
-const PORT = 8888;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -19,6 +19,6 @@ app.get('*', (req, res) => {
   res.sendStatus(404);
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running in port:${PORT}`);
+app.listen(config.port, () => {
+  console.log(`Server is running in port:${config.port}`);
 });
