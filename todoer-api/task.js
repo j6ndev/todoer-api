@@ -16,8 +16,16 @@ router.post('/', (req, res) => {
     .catch(e => res.status(400).send(e));
 });
 
+router.get('/:taskId', (req, res) => {
+  Task.findOne({_id: req.params.taskId})
+    .then(task => {
+      if(!task) return res.status(404).send();
+      res.send({task});
+    })
+    .catch(e => res.status(400).send(e));
+});
 
-router.get('/:taskId', TODO);
+
 router.put('/:taskId', TODO);
 router.delete('/:taskId', TODO);
 
