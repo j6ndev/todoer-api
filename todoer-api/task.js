@@ -25,7 +25,11 @@ router.get('/:taskId', (req, res) => {
     .catch(e => res.status(400).send(e));
 });
 
-router.put('/:taskId', TODO);
+router.put('/:taskId', (req, res) => {
+  Task.findOneAndUpdate({_id: req.params.taskId}, req.body, {new: true})
+    .then(task => res.send(task))
+    .catch(e => res.status(400).send(e));
+});
 
 router.delete('/:taskId', (req, res) => {
   Task.findOneAndDelete({_id: req.params.taskId})
@@ -35,10 +39,5 @@ router.delete('/:taskId', (req, res) => {
     })
     .catch(e => res.status(400).send(e));
 });
-
-function TODO(req, res, next) {
-  console.log(`TODO implement: ${req.method} ${req.url}`);
-  res.status(501).send('TODO');
-}
 
 module.exports = router;
