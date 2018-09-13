@@ -18,10 +18,11 @@
   },
   "dependencies": {
     "@todoer/api": "file:todoer-api",
-    "@todoer/db": "file:todoer-db",
     "@todoer/config": "file:todoer-config",
+    "@todoer/db": "file:todoer-db",
     "body-parser": "^1.18.3",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "joi": "^13.6.0"
   },
   "author": "Jonathan Vazquez <vamtha24@gmail.com>",
   "license": "MIT",
